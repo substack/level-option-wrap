@@ -35,6 +35,11 @@ module.exports = function (opts, prefix) {
         else xopts.lt = lte(opts.lt);
     }
     
-    if (opts.limit !== undefined) xopts.limit = opts.limit;
+    if (prefix.limit !== undefined) {
+        xopts.limit = prefix.limit(opts.limit);
+    }
+    else if (opts.limit !== undefined) {
+        xopts.limit = opts.limit;
+    }
     return xopts;
 };
