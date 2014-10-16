@@ -6,29 +6,31 @@ module.exports = function (opts, prefix) {
     var xopts = {};
     var gte = defined(prefix.gte, prefix.ge, prefix.start);
     var lte = defined(prefix.lte, prefix.le, prefix.end);
+    var ogte = defined(opts.gte, opts.ge, opts.start);
+    var olte = defined(opts.lte, opts.le, opts.end);
     
     if (prefix.gt) {
-        if (defined(opts.gte, opts.ge) !== undefined) {
-            xopts.gte = prefix.gt(defined(opts.gte, opts.ge));
+        if (ogte !== undefined) {
+            xopts.gte = prefix.gt(ogte);
         }
         else xopts.gt = prefix.gt(opts.gt);
     }
     else if (gte) {
-        if (defined(opts.gte, opts.ge) !== undefined) {
-            xopts.gte = gte(defined(opts.gte, opts.ge));
+        if (ogte !== undefined) {
+            xopts.gte = gte(ogte);
         }
         else xopts.gt = gte(opts.gt);
     }
     
     if (prefix.lt) {
-        if (defined(opts.lte, opts.le) !== undefined) {
-            xopts.lte = prefix.lt(defined(opts.lte, opts.le));
+        if (olte !== undefined) {
+            xopts.lte = prefix.lt(olte);
         }
         else xopts.lt = prefix.lt(opts.lt);
     }
     else if (lte) {
-        if (defined(opts.lte, opts.le) !== undefined) {
-            xopts.lte = lte(defined(opts.lte, opts.le));
+        if (olte !== undefined) {
+            xopts.lte = lte(olte);
         }
         else xopts.lt = lte(opts.lt);
     }
