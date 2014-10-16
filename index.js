@@ -1,3 +1,5 @@
+var defined = require('defined');
+
 module.exports = function (opts, prefix) {
     if (!opts) opts = {};
     var xopts = {};
