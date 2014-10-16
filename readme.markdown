@@ -55,6 +55,9 @@ function gets the relevant constraint (whether exclusive or not) and should
 return the new key bound. Exclusivity for each key is determined by the
 corresponding `opts` key.
 
+`opts.limit` values will be passed through and can be modified by defining an
+`fns.limit(n)` function.
+
 # install
 
 With [npm](https://npmjs.org) do:
