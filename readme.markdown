@@ -6,6 +6,8 @@ With this package you can expose familiar `db.createReadStream()` options like
 from leveldb but without leaking information about your internal key
 representations.
 
+[![build status](https://secure.travis-ci.org/substack/level-option-wrap.png)](http://travis-ci.org/substack/level-option-wrap)
+
 # example
 
 For example, suppose you have a list of users using a bytewise keyEncoding and
