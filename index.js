@@ -2,6 +2,7 @@ var defined = require('defined');
 
 module.exports = function (opts, prefix) {
     if (!opts) opts = {};
+    if (!prefix) prefix = {};
     var xopts = {};
     var gte = defined(prefix.gte, prefix.ge, prefix.start);
     var lte = defined(prefix.lte, prefix.le, prefix.end);
